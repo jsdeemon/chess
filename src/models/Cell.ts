@@ -10,4 +10,14 @@ export class Cell {
     board: Board;
     available: boolean; // can move or not
     id: number; // for react keys
+
+    constructor(board: Board, x: number, y: number, color: Colors, figure: Figure) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.figure = figure;
+        this.board = board;
+        this.available = false;
+        this.id = Math.random()
+    }
 }
