@@ -11,7 +11,7 @@ export class Cell {
     available: boolean; // can move or not
     id: number; // for react keys
 
-    constructor(board: Board, x: number, y: number, color: Colors, figure: Figure) {
+    constructor(board: Board, x: number, y: number, color: Colors, figure: Figure | null) {
         this.x = x;
         this.y = y;
         this.color = color;
