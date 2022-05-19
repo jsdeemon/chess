@@ -5,7 +5,7 @@ const CellComponent = () => {
     <div
     className="ceil"
     >
-        CeilComponent</div>
+        </div>
   )
 }
 
