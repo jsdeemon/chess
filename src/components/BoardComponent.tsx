@@ -9,6 +9,8 @@ interface BoardProps {
 }
 
 const BoardComponent: FC<BoardProps> = ({board, setBoard}) => {
+
+  
   return (
     <div className="board">
       {board.cells.map((row, index) => 
