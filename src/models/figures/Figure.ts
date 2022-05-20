@@ -4,13 +4,13 @@ import { Colors } from "../Colors";
 
 
 export enum FigureNames {
-    FIGURE = 'Figure',
-    KING = 'King',
-    KNIGHT = 'Knight',
-    PAWN = 'Pawn',
-    QUEEN = 'Queen',
-    ROOK = 'Rook',
-    BISHOP = 'Bishop',
+    FIGURE = "Figure",
+    KING = "King",
+    KNIGHT = "Knight",
+    PAWN = "Pawn",
+    QUEEN = "Queen",
+    ROOK = "Rook",
+    BISHOP = "Bishop",
 }
 
 export class Figure {
@@ -26,8 +26,8 @@ export class Figure {
         this.cell = cell;
         this.cell.figure = this;
         this.logo = null;
-        this.name = FigureNames.FIGURE,
-        this.id = Math.random()
+        this.name = FigureNames.FIGURE
+        this.id = Math.random() 
     }
 
 
