@@ -25,7 +25,43 @@ export class Board {
         return this.cells[y][x];
     }
 
+    /*
+    --------------------
+    adding figures on the board
+    --------------------
+    */
+
+    private addPawns() {
+
+    }
+
+    private addKings() {
+        
+    }
+
+    private addQueens() {
+        
+    }
+
+    private addRooks() {
+        
+    }
+
+    private addBishops() {
+        
+    }
+
+    private addKnights() {
+        
+    }
+
     public addFigures() {
-        new Queen(Colors.WHITE, this.getCell(3, 3))
+        this.addPawns();
+        this.addKings();
+        this.addBishops();
+        this.addRooks();
+        this.addQueens();
+        this.addKnights();
+      
     }
 }
