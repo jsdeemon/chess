@@ -15,7 +15,10 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard}) => {
   
 
   function click(cell: Cell) {
-    setSelectedCell(cell);
+    if(cell.figure) {
+      setSelectedCell(cell);
+    }
+   
   }
 
   return (
