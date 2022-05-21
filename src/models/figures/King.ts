@@ -13,4 +13,10 @@ constructor(color: Colors, cell: Cell) {
     this.name = FigureNames.KING;  
     
  }
+
+ canMove(target: Cell): boolean {
+    if (!super.canMove(target))
+       return false;
+   return true;
+}
 }
