@@ -56,6 +56,19 @@ export class Cell {
     }
 
     isEmptyDiagonal(target: Cell): boolean {
+        const absX = Math.abs(target.x - this.x);
+        const absY = Math.abs(target.y - this.y);
+        if (absY !== absX) {
+            return false;
+        }
+
+        const dy = this.y < target.y ? 1 : -1;
+        const dx = this.x < target.x ? 1 : -1;
+
+        for (let i = 1; i < absY; i++) {
+            if (!this.board.getCell(this.x + dx * i, this.y + dy * i).isEmpty())
+            return false;
+        }
         return true;
     }
 
