@@ -19,6 +19,8 @@ constructor(color: Colors, cell: Cell) {
        return false;
    if (this.cell.isEmptyVertical(target))
       return true;
+   if (this.cell.isEmptyHorizontal(target))
+      return true;
    return false;
 }
 }
