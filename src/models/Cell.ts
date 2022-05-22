@@ -27,18 +27,18 @@ export class Cell {
 
     isEmptyVertical(target: Cell): boolean {
         if (this.x !== target.x) {
-            return false;
+          return false;
         }
-
+    
         const min = Math.min(this.y, target.y);
         const max = Math.max(this.y, target.y);
         for (let y = min + 1; y < max; y++) {
-            if(this.board.getCell(this.x, y).isEmpty()) {
-                return false;
-            }
+          if(!this.board.getCell(this.x, y).isEmpty()) {
+            return false
+          }
         }
         return true;
-    }
+      }
 
     isEmptyHorizontal(target: Cell): boolean {
         return true;
@@ -48,10 +48,15 @@ export class Cell {
         return true;
     }
 
+    setFigure(figure: Figure) {
+        this.figure = figure;
+        this.figure.cell = this;
+    }
+
     moveFigure(target: Cell) {
         if(this.figure && this.figure?.canMove(target)) {
             this.figure.moveFigure(target)
-            target.figure = this.figure;
+            target.setFigure(this.figure);
             this.figure = null;
         }
     }
