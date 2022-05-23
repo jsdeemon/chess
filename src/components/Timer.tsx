@@ -59,7 +59,9 @@ const handleRestart = () => {
   return (
     <div>
       <div>
-        <button onClick={handleRestart}>Restart Game</button>
+        <button
+        className="restart"
+        onClick={handleRestart}>Restart Game</button>
       </div>
       <h2>Black: {blackTime}</h2>
       <h2>White: {whiteTime}</h2>

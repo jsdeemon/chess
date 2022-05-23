@@ -31,9 +31,6 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, swapPla
       
     }
 
-    // if(cell.figure) {
-    //   setSelectedCell(cell);
-    // }
   }
 
 
@@ -54,7 +51,7 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, swapPla
 
   return (
     <div>
-         <h3>Current player: {currentPlayer?.color}</h3>
+         <h3 className="currentplayer">Current player: {currentPlayer?.color}</h3>
          <div className="board">
       {board.cells.map((row, index) => 
       <React.Fragment key={index}>
@@ -69,6 +66,7 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, swapPla
       </React.Fragment>
       )}
         </div>
+        <h3 className="currentplayer">Chess by <a href="https://github.com/jsdeemon/chess" target="_blank">Jsdeemon</a></h3>
     </div>
   
   )
