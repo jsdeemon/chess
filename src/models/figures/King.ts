@@ -17,6 +17,17 @@ constructor(color: Colors, cell: Cell) {
  canMove(target: Cell): boolean {
     if (!super.canMove(target))
        return false;
-   return true;
+      
+   // King can walk on 1 cell
+ 
+   // king walks on vertical
+   const dx = Math.abs(this.cell.x - target.x);
+   const dy = Math.abs(this.cell.y - target.y);
+   if (dx === 1 && dy === 1) {
+      return true;
+   }
+   return false;
+
+  
 }
 }
