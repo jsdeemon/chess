@@ -14,6 +14,18 @@ const [whiteTime, setWhiteTime] = useState(300);
 
 const timer = useRef<null | ReturnType<typeof setInterval>>(null);
 
+
+useEffect(() => {
+  if (blackTime === 0) {
+    alert('White wins!');
+    handleRestart();
+  }
+  if (whiteTime === 0) {
+    alert('Black wins!');
+    handleRestart();
+  }
+}, [blackTime, whiteTime])
+
 useEffect(() => {
   startTimer();
 }, [currentPlayer])
@@ -22,6 +34,8 @@ function startTimer() {
   if (timer.current) {
     clearInterval(timer.current);
   }
+
+
   const callback = currentPlayer?.color === Colors.WHITE ? decrementWhiteTimer : decrementBlackTimer;
   timer.current = setInterval(callback, 1000);
 
