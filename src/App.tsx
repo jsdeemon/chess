@@ -31,8 +31,10 @@ const App = () => {
   }
 
   return (
+ <div>
+ 
     <div className="app">
-
+ 
 <BoardComponent
 board={board}
 setBoard={setBoard}
@@ -41,6 +43,7 @@ swapPlayer={swapPlayer}
 />
 
     </div>
+ </div>
   );
 };
 

@@ -53,7 +53,9 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, swapPla
   }
 
   return (
-    <div className="board">
+    <div>
+         <h3>Current player: {currentPlayer?.color}</h3>
+         <div className="board">
       {board.cells.map((row, index) => 
       <React.Fragment key={index}>
         {row.map(cell => 
@@ -67,6 +69,8 @@ const BoardComponent: FC<BoardProps> = ({board, setBoard, currentPlayer, swapPla
       </React.Fragment>
       )}
         </div>
+    </div>
+  
   )
 }
 
