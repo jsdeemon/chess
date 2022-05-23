@@ -3,7 +3,7 @@ import { Colors } from '../models/Colors';
 import { Player } from '../models/Player'
 
 interface TimerProps {
-  currentPlayer: Player;
+  currentPlayer: Player | null;
   restart: () => void;
 }
 
@@ -22,7 +22,7 @@ function startTimer() {
   if (timer.current) {
     clearInterval(timer.current);
   }
-  const callback = currentPlayer.color === Colors.WHITE ? decrementWhiteTimer : decrementBlackTimer;
+  const callback = currentPlayer?.color === Colors.WHITE ? decrementWhiteTimer : decrementBlackTimer;
   timer.current = setInterval(callback, 1000);
 
 }
@@ -36,11 +36,16 @@ function decrementWhiteTimer() {
   setWhiteTime(prev => prev - 1);
 }
 
+const handleRestart = () => {
+  setWhiteTime(300);
+  setBlackTime(300);
+  restart();
+}
 
   return (
     <div>
       <div>
-        <button onClick={restart}>Restart Game</button>
+        <button onClick={handleRestart}>Restart Game</button>
       </div>
       <h2>Black: {blackTime}</h2>
       <h2>White: {whiteTime}</h2>

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import './App.css'
 import BoardComponent from './components/BoardComponent'
 import LostFigures from './components/LostFigures'
+import Timer from './components/Timer'
 import { Board } from './models/Board'
 import { Colors } from './models/Colors';
 import { Player } from './models/Player';
@@ -31,11 +32,12 @@ const App = () => {
     setCurrentPlayer(currentPlayer?.color === Colors.WHITE ? blackPlayer : whitePlayer)
   }
 
-  return (
-
- 
+  return ( 
     <div className="app">
- 
+ <Timer 
+ currentPlayer={currentPlayer}
+ restart={restart}
+ />
 <BoardComponent
 board={board}
 setBoard={setBoard}
