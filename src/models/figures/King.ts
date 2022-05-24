@@ -26,6 +26,23 @@ constructor(color: Colors, cell: Cell) {
    if (dx === 1 && dy === 1) {
       return true;
    }
+   // king walks on one step vertival & horizontal
+  if (this.cell.y === target.y + 1 && this.cell.x === target.x) {
+     return true;
+  }
+
+  if (this.cell.y === target.y - 1 && this.cell.x === target.x) {
+   return true;
+}
+
+if (this.cell.x === target.x + 1 && this.cell.y === target.y) {
+   return true;
+}
+
+if (this.cell.x === target.x - 1 && this.cell.y === target.y) {
+   return true;
+}
+  
    return false;
 
   
